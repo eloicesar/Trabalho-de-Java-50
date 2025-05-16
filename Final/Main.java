@@ -1,59 +1,53 @@
-package controller;
-
-import model.Participante;
-import model.ICadastro;
-import java.util.ArrayList;
+// Source code is decompiled from a .class file using FernFlower decompiler.
+import controller.ParticipanteController;
 import java.util.Scanner;
 
-public class ParticipanteController implements ICadastro {
-    private ArrayList<Participante> participantes = new ArrayList<>();
-    private Scanner scanner = new Scanner(System.in);
+public class Main {
+   public Main() {
+   }
 
-    @Override
-    public void cadastrar() {
-        System.out.print("Nome: ");
-        String nome = scanner.nextLine();
-        System.out.print("Email: ");
-        String email = scanner.nextLine();
-        System.out.print("CPF: ");
-        String cpf = scanner.nextLine();
+   public static void main(String[] var0) {
+      ParticipanteController var1 = new ParticipanteController();
+      Scanner var2 = new Scanner(System.in);
+      int var3 = -1;
 
-        Participante p = new Participante(nome, email, cpf);
-        participantes.add(p);
+      while(var3 != 0) {
+         System.out.println("\n=== MENU PARTICIPANTE ===");
+         System.out.println("1 - Cadastrar participante");
+         System.out.println("2 - Listar participantes");
+         System.out.println("3 - Atualizar participante");
+         System.out.println("4 - Remover participante");
+         System.out.println("0 - Sair");
+         System.out.print("Escolha uma opção: ");
 
-        System.out.println("Participante cadastrado com sucesso!");
-    }
+         try {
+            var3 = Integer.parseInt(var2.nextLine());
+         } catch (NumberFormatException var5) {
+            System.out.println("Por favor, digite um número válido.");
+            continue;
+         }
 
-    @Override
-    public void listar() {
-        for (Participante p : participantes) {
-            p.exibirDados();
-        }
-    }
+         switch (var3) {
+            case 0:
+               System.out.println("Encerrando o programa. Até logo!");
+               break;
+            case 1:
+               var1.cadastrar();
+               break;
+            case 2:
+               var1.listar();
+               break;
+            case 3:
+               var1.atualizar();
+               break;
+            case 4:
+               var1.remover();
+               break;
+            default:
+               System.out.println("Opção inválida. Tente novamente.");
+         }
+      }
 
-    @Override
-    public void atualizar() {
-        System.out.print("Digite o CPF do participante para atualizar: ");
-        String cpf = scanner.nextLine();
-
-        for (Participante p : participantes) {
-            if (p.getCpf().equals(cpf)) {
-                System.out.print("Novo nome: ");
-                p.setNome(scanner.nextLine());
-                System.out.print("Novo email: ");
-                p.setEmail(scanner.nextLine());
-                System.out.println("Participante atualizado com sucesso!");
-                return;
-            }
-        }
-        System.out.println("Participante não encontrado.");
-    }
-
-    @Override
-    public void remover() {
-        System.out.print("Digite o CPF do participante para remover: ");
-        String cpf = scanner.nextLine();
-        participantes.removeIf(p -> p.getCpf().equals(cpf));
-        System.out.println("Participante removido, se existia.");
-    }
+      var2.close();
+   }
 }
