@@ -1,53 +1,115 @@
-// Source code is decompiled from a .class file using FernFlower decompiler.
 import controller.ParticipanteController;
+import controller.EventoController;
+import model.Evento;
+import model.Participante;
 import java.util.Scanner;
 
 public class Main {
-   public Main() {
-   }
+    public static void main(String[] args) {
+        ParticipanteController participanteController = new ParticipanteController();
+        EventoController eventoController = new EventoController();
+        Scanner scanner = new Scanner(System.in);
+        int opcao = -1;
 
-   public static void main(String[] var0) {
-      ParticipanteController var1 = new ParticipanteController();
-      Scanner var2 = new Scanner(System.in);
-      int var3 = -1;
+        while (opcao != 0) {
+            System.out.println("\n=== MENU PRINCIPAL ===");
+            System.out.println("1 - Gerenciar Participantes");
+            System.out.println("2 - Gerenciar Eventos");
+            System.out.println("0 - Sair");
+            System.out.print("Escolha uma opção: ");
 
-      while(var3 != 0) {
-         System.out.println("\n=== MENU PARTICIPANTE ===");
-         System.out.println("1 - Cadastrar participante");
-         System.out.println("2 - Listar participantes");
-         System.out.println("3 - Atualizar participante");
-         System.out.println("4 - Remover participante");
-         System.out.println("0 - Sair");
-         System.out.print("Escolha uma opção: ");
+            try {
+                opcao = Integer.parseInt(scanner.nextLine());
+            } catch (NumberFormatException e) {
+                System.out.println("Digite um número válido.");
+                continue;
+            }
 
-         try {
-            var3 = Integer.parseInt(var2.nextLine());
-         } catch (NumberFormatException var5) {
-            System.out.println("Por favor, digite um número válido.");
-            continue;
-         }
+            switch (opcao) {
+                case 1 -> menuParticipantes(participanteController, scanner);
+                case 2 -> menuEventos(eventoController, participanteController, scanner);
+                case 0 -> System.out.println("Encerrando...");
+                default -> System.out.println("Opção inválida.");
+            }
+        }
 
-         switch (var3) {
-            case 0:
-               System.out.println("Encerrando o programa. Até logo!");
-               break;
-            case 1:
-               var1.cadastrar();
-               break;
-            case 2:
-               var1.listar();
-               break;
-            case 3:
-               var1.atualizar();
-               break;
-            case 4:
-               var1.remover();
-               break;
-            default:
-               System.out.println("Opção inválida. Tente novamente.");
-         }
-      }
+        scanner.close();
+    }
 
-      var2.close();
-   }
+    private static void menuParticipantes(ParticipanteController controller, Scanner scanner) {
+        int opcao = -1;
+
+        while (opcao != 0) {
+            System.out.println("\n--- Menu Participantes ---");
+            System.out.println("1 - Cadastrar");
+            System.out.println("2 - Listar");
+            System.out.println("3 - Atualizar");
+            System.out.println("4 - Remover");
+            System.out.println("0 - Voltar");
+            System.out.print("Opção: ");
+            opcao = Integer.parseInt(scanner.nextLine());
+
+            switch (opcao) {
+                case 1 -> controller.cadastrar();
+                case 2 -> controller.listar();
+                case 3 -> controller.atualizar();
+                case 4 -> controller.remover();
+                case 0 -> System.out.println("Voltando ao menu principal...");
+                default -> System.out.println("Opção inválida.");
+            }
+        }
+    }
+
+    private static void menuEventos(EventoController eventoController, ParticipanteController participanteController, Scanner scanner) {
+        int opcao = -1;
+
+        while (opcao != 0) {
+            System.out.println("\n--- Menu Eventos ---");
+            System.out.println("1 - Cadastrar evento");
+            System.out.println("2 - Listar eventos");
+            System.out.println("3 - Inscrever participante no evento");
+            System.out.println("0 - Voltar");
+            System.out.print("Opção: ");
+            opcao = Integer.parseInt(scanner.nextLine());
+
+            switch (opcao) {
+                case 1 -> eventoController.cadastrar();
+                case 2 -> eventoController.listar();
+                case 3 -> inscreverParticipanteEvento(eventoController, participanteController, scanner);
+                case 0 -> System.out.println("Voltando ao menu principal...");
+                default -> System.out.println("Opção inválida.");
+            }
+        }
+    }
+
+    private static void inscreverParticipanteEvento(EventoController eventoController, ParticipanteController participanteController, Scanner scanner) {
+        // Exibe a lista de eventos disponíveis
+        eventoController.listar();
+
+        System.out.print("\nDigite o título do evento para inscrever um participante: ");
+        String tituloEvento = scanner.nextLine();
+
+        System.out.print("Digite o CPF do participante para inscrever: ");
+        String cpfParticipante = scanner.nextLine();
+
+        // Encontra o evento
+        Evento evento = eventoController.buscarEventoPorTitulo(tituloEvento);
+
+        if (evento == null) {
+            System.out.println("Evento não encontrado!");
+            return;
+        }
+
+        // Encontra o participante
+        Participante participante = participanteController.buscarParticipantePorCpf(cpfParticipante);
+
+        if (participante == null) {
+            System.out.println("Participante não encontrado!");
+            return;
+        }
+
+        // Inscreve o participante no evento
+        evento.adicionarParticipante(participante);
+        System.out.println("Participante inscrito no evento com sucesso!");
+    }
 }
