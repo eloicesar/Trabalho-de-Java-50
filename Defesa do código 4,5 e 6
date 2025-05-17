@@ -36,3 +36,26 @@ Aqui temos o polimorfismo por sobrecarga, onde métodos com o mesmo nome (gerar)
 Isso facilita o uso do método e evita criar nomes diferentes para funções que têm o mesmo propósito, mantendo o código mais limpo e intuitivo.
 
 ✅ Exercício 13 — Clean Code
+✔️ O que foi feito:
+Usei nomes claros e descritivos para classes, variáveis e métodos.
+
+Separei as responsabilidades em arquivos diferentes (padrão MVC).
+
+Mantive os métodos curtos e objetivos.
+
+Usei indentação correta e lógica clara.
+
+Apliquei encapsulamento com getters e setters.
+
+🎤 Como explicar:
+Em todo o projeto eu apliquei os princípios de Clean Code, que servem para deixar o código limpo, legível e fácil de manter.
+Usei nomes que indicam exatamente o que o código faz, evitei repetições, e dividi o sistema em camadas (modelo, controlador, visual).
+Assim, qualquer pessoa que leia meu código vai entender facilmente sua lógica e poderá trabalhar junto ou fazer melhorias sem dificuldades.
+
+📌 Extras que você pode comentar:
+O projeto segue orientação a objetos, com herança, abstração, encapsulamento e polimorfismo.
+
+A estrutura modular ajuda a crescer o sistema futuramente (ex: integrar banco de dados, interface gráfica, etc).
+
+Está pronto para aplicar serialização e logs com os arquivos Serializador.java e LogUtil.java.
+
