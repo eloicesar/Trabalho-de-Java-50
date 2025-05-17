@@ -1,0 +1,38 @@
+RESUMO PARA DEFESA DE CÓDIGO
+Tema: Sistema de Gerenciamento de Eventos
+Exercícios atendidos: 4 (Classe Abstrata), 5 (Polimorfismo de Sobrescrita), 6 (Polimorfismo de Sobrecarga), 13 (Clean Code)
+
+✅ Exercício 4 — Classe Abstrata
+✔️ O que foi feito:
+Criei a classe abstrata Usuario com os atributos comuns: nome e email.
+
+Incluí um método abstrato chamado exibirDados(), que obriga todas as subclasses a implementarem seu próprio comportamento.
+
+🎤 Como explicar:
+A classe Usuario é abstrata porque ela não representa um usuário real diretamente, mas sim um conceito geral.
+Com isso, eu garanto que todas as subclasses (como Organizador e Participante) terão o método exibirDados() com sua própria lógica. Isso aumenta a flexibilidade e reaproveitamento do código.
+
+✅ Exercício 5 — Polimorfismo de Sobrescrita
+✔️ O que foi feito:
+Nas classes Organizador e Participante, redefini o método exibirDados() para que cada um apresente as informações do seu jeito.
+
+🎤 Como explicar:
+O método exibirDados() é um exemplo de polimorfismo por sobrescrita, porque o mesmo método é implementado de forma diferente em cada subclasse.
+Assim, quando eu chamo esse método, o sistema sabe qual versão deve ser executada com base no tipo de objeto.
+Isso melhora a organização e permite que cada tipo de usuário se comporte conforme suas necessidades.
+
+✅ Exercício 6 — Polimorfismo de Sobrecarga
+✔️ O que foi feito:
+Criei a classe Relatorio com três métodos gerar(), cada um com parâmetros diferentes:
+
+Um sem nenhum parâmetro.
+
+Um com o parâmetro tipoEvento.
+
+Um com tipoEvento e ano.
+
+🎤 Como explicar:
+Aqui temos o polimorfismo por sobrecarga, onde métodos com o mesmo nome (gerar) têm comportamentos diferentes dependendo da quantidade e tipo de parâmetros.
+Isso facilita o uso do método e evita criar nomes diferentes para funções que têm o mesmo propósito, mantendo o código mais limpo e intuitivo.
+
+✅ Exercício 13 — Clean Code
