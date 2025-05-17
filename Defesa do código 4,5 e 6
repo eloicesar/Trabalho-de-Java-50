@@ -59,3 +59,63 @@ A estrutura modular ajuda a crescer o sistema futuramente (ex: integrar banco de
 
 Está pronto para aplicar serialização e logs com os arquivos Serializador.java e LogUtil.java.
 
+----------------------------------------------------------------------------------------------------------------------------
+
+
+ROTEIRO PARA DEFESA INTERLIGADA (ideal para perguntas do professor)
+🟢 1. Comece falando da estrutura geral
+“O meu projeto é baseado no padrão MVC, então eu separei o código em:
+
+Model: onde ficam as classes principais como Evento, Usuario, Participante, Organizador, Relatorio.
+
+Controller: onde estão os controles de cadastro.
+
+View: usei o Main.java com menu no console.
+Isso me ajuda a organizar melhor a lógica e a deixar cada parte com uma responsabilidade clara — que é um dos princípios de Clean Code.”
+
+🔵 2. Introduza a classe abstrata (exercício 4)
+“No model, criei uma classe abstrata chamada Usuario.
+Essa classe representa qualquer tipo de usuário do sistema. Ela não pode ser instanciada diretamente, e define um método abstrato exibirDados() que deve ser implementado por quem herda.”
+
+🟣 3. Fale das classes filhas e da sobrescrita (exercício 5)
+“Duas classes herdaram de Usuario: Participante e Organizador.
+Cada uma sobrescreve o método exibirDados() do seu jeito.
+Isso é polimorfismo de sobrescrita — onde o mesmo método se comporta de forma diferente dependendo da classe.
+Com isso, posso tratar todos como Usuario, mas o sistema executa o comportamento correto.”
+
+🟠 4. Explique o polimorfismo de sobrecarga (exercício 6)
+“Na classe Relatorio, usei polimorfismo de sobrecarga, criando o método gerar() com diferentes versões:
+
+Um sem parâmetros
+
+Um com o tipo do evento
+
+E outro com tipo e ano
+Isso permite usar o mesmo nome de método para situações diferentes, tornando o código mais limpo e reutilizável.”
+
+🟡 5. Fale sobre Clean Code (exercício 13)
+“Durante todo o projeto, segui os princípios de Clean Code:
+
+Usei nomes descritivos que explicam o que fazem
+
+Mantive os métodos pequenos e objetivos
+
+Separei responsabilidades
+
+Apliquei encapsulamento com getters e setters
+
+Evitei repetições e organizei tudo por pacotes
+Isso facilita a leitura, a manutenção e o trabalho em equipe.”
+
+🔁 6. Encadeie os assuntos com naturalidade
+Se o professor perguntar, por exemplo:
+
+"Por que você usou uma interface?"
+Você pode dizer:
+
+“Para padronizar o comportamento das classes de controle. A interface ICadastro obriga todos os controladores a terem os métodos de CRUD. Isso garante consistência e também ajuda a aplicar os princípios de coesão e Clean Code.”
+
+🏁 Conclua com segurança:
+“O código que fiz é simples, mas representa bem os conceitos de orientação a objetos, Clean Code e estrutura organizada.
+Mesmo sem interface gráfica ou banco de dados, o foco foi mostrar meu entendimento prático dos pilares exigidos no projeto.”
+
