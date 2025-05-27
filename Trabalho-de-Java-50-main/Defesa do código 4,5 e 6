@@ -1,0 +1,121 @@
+RESUMO PARA DEFESA DE CÓDIGO
+Tema: Sistema de Gerenciamento de Eventos
+Exercícios atendidos: 4 (Classe Abstrata), 5 (Polimorfismo de Sobrescrita), 6 (Polimorfismo de Sobrecarga), 13 (Clean Code)
+
+✅ Exercício 4 — Classe Abstrata
+✔️ O que foi feito:
+Criei a classe abstrata Usuario com os atributos comuns: nome e email.
+
+Incluí um método abstrato chamado exibirDados(), que obriga todas as subclasses a implementarem seu próprio comportamento.
+
+🎤 Como explicar:
+A classe Usuario é abstrata porque ela não representa um usuário real diretamente, mas sim um conceito geral.
+Com isso, eu garanto que todas as subclasses (como Organizador e Participante) terão o método exibirDados() com sua própria lógica. Isso aumenta a flexibilidade e reaproveitamento do código.
+
+✅ Exercício 5 — Polimorfismo de Sobrescrita
+✔️ O que foi feito:
+Nas classes Organizador e Participante, redefini o método exibirDados() para que cada um apresente as informações do seu jeito.
+
+🎤 Como explicar:
+O método exibirDados() é um exemplo de polimorfismo por sobrescrita, porque o mesmo método é implementado de forma diferente em cada subclasse.
+Assim, quando eu chamo esse método, o sistema sabe qual versão deve ser executada com base no tipo de objeto.
+Isso melhora a organização e permite que cada tipo de usuário se comporte conforme suas necessidades.
+
+✅ Exercício 6 — Polimorfismo de Sobrecarga
+✔️ O que foi feito:
+Criei a classe Relatorio com três métodos gerar(), cada um com parâmetros diferentes:
+
+Um sem nenhum parâmetro.
+
+Um com o parâmetro tipoEvento.
+
+Um com tipoEvento e ano.
+
+🎤 Como explicar:
+Aqui temos o polimorfismo por sobrecarga, onde métodos com o mesmo nome (gerar) têm comportamentos diferentes dependendo da quantidade e tipo de parâmetros.
+Isso facilita o uso do método e evita criar nomes diferentes para funções que têm o mesmo propósito, mantendo o código mais limpo e intuitivo.
+
+✅ Exercício 13 — Clean Code
+✔️ O que foi feito:
+Usei nomes claros e descritivos para classes, variáveis e métodos.
+
+Separei as responsabilidades em arquivos diferentes (padrão MVC).
+
+Mantive os métodos curtos e objetivos.
+
+Usei indentação correta e lógica clara.
+
+Apliquei encapsulamento com getters e setters.
+
+🎤 Como explicar:
+Em todo o projeto eu apliquei os princípios de Clean Code, que servem para deixar o código limpo, legível e fácil de manter.
+Usei nomes que indicam exatamente o que o código faz, evitei repetições, e dividi o sistema em camadas (modelo, controlador, visual).
+Assim, qualquer pessoa que leia meu código vai entender facilmente sua lógica e poderá trabalhar junto ou fazer melhorias sem dificuldades.
+
+📌 Extras que você pode comentar:
+O projeto segue orientação a objetos, com herança, abstração, encapsulamento e polimorfismo.
+
+A estrutura modular ajuda a crescer o sistema futuramente (ex: integrar banco de dados, interface gráfica, etc).
+
+Está pronto para aplicar serialização e logs com os arquivos Serializador.java e LogUtil.java.
+
+----------------------------------------------------------------------------------------------------------------------------
+
+
+ROTEIRO PARA DEFESA INTERLIGADA (ideal para perguntas do professor)
+🟢 1. Comece falando da estrutura geral
+“O meu projeto é baseado no padrão MVC, então eu separei o código em:
+
+Model: onde ficam as classes principais como Evento, Usuario, Participante, Organizador, Relatorio.
+
+Controller: onde estão os controles de cadastro.
+
+View: usei o Main.java com menu no console.
+Isso me ajuda a organizar melhor a lógica e a deixar cada parte com uma responsabilidade clara — que é um dos princípios de Clean Code.”
+
+🔵 2. Introduza a classe abstrata (exercício 4)
+“No model, criei uma classe abstrata chamada Usuario.
+Essa classe representa qualquer tipo de usuário do sistema. Ela não pode ser instanciada diretamente, e define um método abstrato exibirDados() que deve ser implementado por quem herda.”
+
+🟣 3. Fale das classes filhas e da sobrescrita (exercício 5)
+“Duas classes herdaram de Usuario: Participante e Organizador.
+Cada uma sobrescreve o método exibirDados() do seu jeito.
+Isso é polimorfismo de sobrescrita — onde o mesmo método se comporta de forma diferente dependendo da classe.
+Com isso, posso tratar todos como Usuario, mas o sistema executa o comportamento correto.”
+
+🟠 4. Explique o polimorfismo de sobrecarga (exercício 6)
+“Na classe Relatorio, usei polimorfismo de sobrecarga, criando o método gerar() com diferentes versões:
+
+Um sem parâmetros
+
+Um com o tipo do evento
+
+E outro com tipo e ano
+Isso permite usar o mesmo nome de método para situações diferentes, tornando o código mais limpo e reutilizável.”
+
+🟡 5. Fale sobre Clean Code (exercício 13)
+“Durante todo o projeto, segui os princípios de Clean Code:
+
+Usei nomes descritivos que explicam o que fazem
+
+Mantive os métodos pequenos e objetivos
+
+Separei responsabilidades
+
+Apliquei encapsulamento com getters e setters
+
+Evitei repetições e organizei tudo por pacotes
+Isso facilita a leitura, a manutenção e o trabalho em equipe.”
+
+🔁 6. Encadeie os assuntos com naturalidade
+Se o professor perguntar, por exemplo:
+
+"Por que você usou uma interface?"
+Você pode dizer:
+
+“Para padronizar o comportamento das classes de controle. A interface ICadastro obriga todos os controladores a terem os métodos de CRUD. Isso garante consistência e também ajuda a aplicar os princípios de coesão e Clean Code.”
+
+🏁 Conclua com segurança:
+“O código que fiz é simples, mas representa bem os conceitos de orientação a objetos, Clean Code e estrutura organizada.
+Mesmo sem interface gráfica ou banco de dados, o foco foi mostrar meu entendimento prático dos pilares exigidos no projeto.”
+

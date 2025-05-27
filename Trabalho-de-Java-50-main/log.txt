@@ -1,0 +1,46 @@
+2025-05-23T23:52:49.705306700 - Participante cadastrado: salomao (CPF: 12331727945)
+2025-05-23T23:53:08.504178400 - Participante atualizado: CPF 12331727945
+2025-05-23T23:58:45.873344 - Relatório geral gerado
+2025-05-23T23:58:56.188732800 - Relatório geral gerado
+2025-05-23T23:58:56.998070600 - Relatório geral gerado
+2025-05-23T23:58:57.284224500 - Relatório geral gerado
+2025-05-23T23:58:57.479975 - Relatório geral gerado
+2025-05-23T23:58:57.701634200 - Relatório geral gerado
+2025-05-23T23:58:57.912951400 - Relatório geral gerado
+2025-05-23T23:58:58.108005500 - Relatório geral gerado
+2025-05-23T23:58:58.330491300 - Relatório geral gerado
+2025-05-23T23:58:58.515229100 - Relatório geral gerado
+2025-05-23T23:58:58.709124900 - Relatório geral gerado
+2025-05-23T23:58:58.945267 - Relatório geral gerado
+2025-05-23T23:58:59.141252700 - Relatório geral gerado
+2025-05-23T23:58:59.379479200 - Relatório geral gerado
+2025-05-23T23:58:59.605396200 - Relatório geral gerado
+2025-05-23T23:58:59.833187500 - Relatório geral gerado
+2025-05-23T23:59:00.055391200 - Relatório geral gerado
+2025-05-23T23:59:00.266513500 - Relatório geral gerado
+2025-05-23T23:59:00.487537800 - Relatório geral gerado
+2025-05-23T23:59:00.684350300 - Relatório geral gerado
+2025-05-23T23:59:00.881929400 - Relatório geral gerado
+2025-05-23T23:59:01.132813900 - Relatório geral gerado
+2025-05-23T23:59:01.346696700 - Relatório geral gerado
+2025-05-23T23:59:01.583539100 - Relatório geral gerado
+2025-05-23T23:59:01.796475600 - Relatório geral gerado
+2025-05-23T23:59:01.988740300 - Relatório geral gerado
+2025-05-23T23:59:02.197488800 - Relatório geral gerado
+2025-05-23T23:59:02.409516400 - Relatório geral gerado
+2025-05-23T23:59:02.589292400 - Relatório geral gerado
+2025-05-24T00:08:10.947238 - Sistema encerrado
+2025-05-24T00:51:15.649014800 - Participante cadastrado: salomao (CPF: 12331727945)
+2025-05-24T00:51:59.459870200 - Participante atualizado: CPF 12331727945
+2025-05-24T00:52:47.198705100 - Participante removido: CPF 12331727945
+2025-05-24T00:53:14.455505200 - Organizador cadastrado: salomao
+2025-05-24T00:53:57.634355900 - Organizador atualizado: salomao
+2025-05-24T00:54:11.209798500 - Organizador removido: salomao
+2025-05-24T00:55:08.375144200 - Organizador cadastrado: salomao
+2025-05-24T01:03:14.372448600 - Organizador cadastrado: salomao (CPF: 12331727945)
+2025-05-24T01:03:51.344889500 - Organizador atualizado: CPF 12331727945
+2025-05-24T01:04:50.426232900 - Evento cadastrado: palestra de ia
+2025-05-24T01:06:16.416235900 - Evento atualizado: palestra de ia
+2025-05-24T01:07:08.227028200 - Participante cadastrado: salomao (CPF: 12331727945)
+2025-05-24T01:07:41.565152100 - Participante salomao inscrito no evento palestra de ia
+2025-05-24T01:08:07.506187800 - Evento removido: palestra de ia
